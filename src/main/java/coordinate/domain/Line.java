@@ -8,12 +8,11 @@ public class Line implements ResultPrintable {
     private static final String RESULT_FORMAT = "두 점 사이 거리는 %.6f";
     private static final int STANDARD_INDEX = 0;
     private static final int LAST_INDEX = 1;
-    private static final int POINT_SIZE = 2;
 
     private final Points points;
 
     private Line(Points points) {
-        if (points.getSize() != POINT_SIZE) {
+        if (Objects.isNull(points)) {
             throw new IllegalArgumentException(ERROR_SIZE);
         }
 
@@ -25,13 +24,13 @@ public class Line implements ResultPrintable {
     }
 
     double calculateDistance() {
-        Point point1 = points.getPoints(STANDARD_INDEX);
+        Point point = points.getPoints(STANDARD_INDEX);
 
-        if (Objects.isNull(point1)) {
+        if (Objects.isNull(point)) {
             throw new NullPointerException(ERROR_NULL);
         }
 
-        return points.getPoints(STANDARD_INDEX)
+        return point
                 .getDistance(points.getPoints(LAST_INDEX));
     }
 

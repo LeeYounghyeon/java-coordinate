@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class FigureEnumTest {
+class FiguresTest {
     @Test
     void 점이_두개면_라인() {
-        assertThat(FigureEnum.valueOf(2)).isEqualTo(FigureEnum.LINE);
+        assertThat(Figures.valueOf(2)).isEqualTo(Figures.LINE);
     }
 
     @Test
     void 점이_세개면_삼각형() {
-        assertThat(FigureEnum.valueOf(3)).isEqualTo(FigureEnum.TRIANGLE);
+        assertThat(Figures.valueOf(3)).isEqualTo(Figures.TRIANGLE);
     }
 
     @Test
     void 점이_네개면_사각형() {
-        assertThat(FigureEnum.valueOf(4)).isEqualTo(FigureEnum.RECTANGLE);
+        assertThat(Figures.valueOf(4)).isEqualTo(Figures.RECTANGLE);
     }
 }
